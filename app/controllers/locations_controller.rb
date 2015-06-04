@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
     #Loop through all buses to find those that are nearby
     @nearby_buses = []
     @buses.each do |bus|
-      if is_nearby(@location.lat, @location.long, bus["LATITUDE"].to_f, bus["LONGITUDE"].to_f, long_bus)
+      if is_nearby(@location.latitude, @location.longitude, bus["LATITUDE"].to_f, bus["LONGITUDE"].to_f)
         @nearby_buses.push(bus)
       end #if
     end #each do
@@ -85,6 +85,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:address, :city, :lat, :long)
+      params.require(:location).permit(:address, :city, :latitude, :longitude)
     end
 end

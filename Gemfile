@@ -35,6 +35,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # converts address to lat/long
 gem 'geocoder'
 
+# enable prettier rails console printing
+gem "awesome_print"
+
+# annotate models with or schema
+gem "annotate"
+
+gem "stamp"
+
+group :development do
+  gem "quiet_assets" # quiet those assets down
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  include LocationsHelper
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -10,7 +11,22 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-  end
+    #MARTA API URL source
+    source = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus"
+
+    #uses helper method to parse data into array pf hashes
+    @buses = fetch_api_data(source)
+
+    #Loop through all buses to find those that are nearby
+    @nearby_buses = []
+    @buses.each do |bus|
+      if is_nearby(@location.lat, @location.long, bus["LATITUDE"].to_f, bus["LONGITUDE"].to_f, long_bus)
+        @nearby_buses.push(bus)
+      end #if
+    end #each do
+    @bus_count = @nearby_buses.length
+    #TODO: if no busses return with notice and redirect back to the new view
+  end #show
 
   # GET /locations/new
   def new

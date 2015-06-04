@@ -3,11 +3,24 @@
 one:
   address: MyString
   city: MyString
-  lat: 1.5
-  long: 1.5
+  latitude: 1.5
+  longitude: 1.5
 
 two:
   address: MyString
   city: MyString
-  lat: 1.5
-  long: 1.5
+  latitude: 1.5
+  longitude: 1.5
+
+# == Schema Information
+#
+# Table name: locations
+#
+#  id         :integer          not null, primary key
+#  address    :string
+#  city       :string
+#  latitude   :float
+#  longitude  :float
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

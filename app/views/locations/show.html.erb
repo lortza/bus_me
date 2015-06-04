@@ -8,11 +8,10 @@
  <p>...not really that close.  Time to walk, bike, taxi, or Uber.</p>
 <% else %>
  <% @nearby_buses.each do |bus| %>
-   <p>
-     <strong>Route:</strong> <%= bus["ROUTE"] %>
-     <strong>Bus Number:</strong> <%= bus["VEHICLE"] %>
-     <strong>Next Stop:</strong> <%= bus["TIMEPOINT"] %>
-   </p>
+   <ul>
+     <li><strong>Bus #<%= bus["VEHICLE"] %></strong> (<%= bus["ROUTE"] %> Route): 
+     Heading <%= bus["DIRECTION"] %> towards the <%= bus["TIMEPOINT"] %> stop.</li>
+   </ul>
  <% end %>
 <% end %>
 

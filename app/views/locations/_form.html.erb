@@ -13,14 +13,15 @@
 
   <div class="field">
     <%= f.label "Enter your street address or nearest corner" %><br>
-    <%= f.text_field :address  %>
+    <%= f.text_field :address, class: "form-control", placeholder: "Spring & Broad"  %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.select :city, Location::CITIES, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Find Buses" %>
+    <%= f.submit " Find Buses", class: "btn btn-success btn-md fa fa-bus" %>
   </div>
 <% end %>
+

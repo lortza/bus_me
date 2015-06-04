@@ -26,6 +26,8 @@ class LocationsController < ApplicationController
     end #each do
     @bus_count = @nearby_buses.length
     #TODO: if no busses return with notice and redirect back to the new view
+    #{ redirect_to @location, notice: 'Location was successfully created.' }
+    
   end #show
 
   # GET /locations/new

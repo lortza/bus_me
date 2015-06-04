@@ -1,2 +1,9 @@
 class Location < ActiveRecord::Base
-end
+  geocoded_by :my_location  # can also be an IP address
+  after_validation :geocode   # auto-fetch coordinates
+
+  def my_location
+    "#{address}, #{city}, GA"
+  end #my_location
+
+end #class

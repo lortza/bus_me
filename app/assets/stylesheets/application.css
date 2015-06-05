@@ -20,6 +20,8 @@ body {
   background-color: black;
   color: white;
 }
+
+
 .container {
   max-width: 500px;
 }
@@ -28,7 +30,6 @@ body {
   margin-right: 2px;
   color: gray;
   color: #009cd6;
-
 }
 
 .logobus {
@@ -52,9 +53,13 @@ body {
   color: gray;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .locationbox {
   background-color: gray;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 10px;
   text-align: center;
   margin-bottom: 1em;

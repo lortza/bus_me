@@ -1,6 +1,11 @@
 class Location < ActiveRecord::Base
+  #Your model must tell Geocoder which method returns your object's geocodable address:
   geocoded_by :my_location  # can also be an IP address
   after_validation :geocode   # auto-fetch coordinates
+
+  #For reverse geocoding, tell Geocoder which attributes store latitude and longitude:
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode  # auto-fetch address
 
   validates :address, :city, presence: true
 

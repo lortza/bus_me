@@ -11,6 +11,9 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    #TODO: clear lat & long from previous search?
+    
+
     #MARTA API URL source
     source = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus"
 

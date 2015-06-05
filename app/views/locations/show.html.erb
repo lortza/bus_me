@@ -2,7 +2,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <div class="box-gray">
+        <div class="locationbox">
           <p>Buses Near...</p> 
           <p class="yourlocation"><%= @location.my_location %></p>
         </div><!--box-gray-->
@@ -16,7 +16,7 @@
 <table class="table">
  <% @nearby_buses.each do |bus| %>
     <tr>
-      <td class="fa fa-bus fa-2x"><p></p></td>
+      <td><p class="fa fa-bus fa-2x"></p></td>
       <td><p class="busnumber"><%= bus["VEHICLE"] %></p>
       <p class="busroute"><%= bus["ROUTE"] %> Route</td>
       <td><p>Approaching the <%= bus["TIMEPOINT"] %> stop, heading <%= bus["DIRECTION"] %></p></td> 
@@ -25,4 +25,4 @@
 <% end %>
 </table>
 
-<%= link_to 'New Search', root_url, class: "btn btn-success btn-md" %>
+<center><%= link_to 'New Search', root_url, class: "btn btn-success btn-md" %></center>

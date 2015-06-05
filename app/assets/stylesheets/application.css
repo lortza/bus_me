@@ -16,13 +16,48 @@
 
 
 
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  max-width: 500px;
+}
 
+.logoicon {
+  margin-right: 2px;
+  color: gray;
+  color: #009cd6;
 
-.box-gray {
-  background-color: #f3f3f3;
+}
+
+.logobus {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  color: #beda72;
+  color: #f1c500;
+}
+
+.logome {
+  font-family: 'Rock Salt', cursive;
+  color: #658609;
+  font-size: 80%;
+  color: #ed9600;
+}
+
+.tagline {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  font-size: 30%;
+  color: gray;
+}
+
+.locationbox {
+  background-color: gray;
   border-radius: 2px;
   padding: 10px;
   text-align: center;
+  margin-bottom: 1em;
 }
  .yourlocation {
   font-weight: bold;

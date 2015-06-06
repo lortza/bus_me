@@ -11,23 +11,24 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    #TODO: clear lat & long from previous search?
-    
-
     #MARTA API URL source
     source = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus"
 
     #uses helper method to parse data into array pf hashes
     @buses = fetch_api_data(source)
 
-    #Loop through all buses to find those that are nearby
+    # create nearby buses array to hold results of upcoming each do loop
     @nearby_buses = []
+
+    #Loop through all buses to find those that are nearby
     @buses.each do |bus|
       if is_nearby(@location.latitude, @location.longitude, bus["LATITUDE"].to_f, bus["LONGITUDE"].to_f)
         @nearby_buses.push(bus)
       end #if
     end #each do
+
     @bus_count = @nearby_buses.length
+
       if @bus_count == 0
       redirect_to root_url, notice: "Dang. There aren't any buses serving that area right now." 
       end # if    
@@ -50,7 +51,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to @location }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }

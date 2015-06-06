@@ -17,6 +17,10 @@ class Location < ActiveRecord::Base
     "#{address}, #{city}, GA"
   end #my_location
 
+  def bus_route
+    @buses.bus["ROUTE"]
+  end #bus_route
+
 end #class
 
 # == Schema Information

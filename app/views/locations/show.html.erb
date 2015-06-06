@@ -17,8 +17,8 @@
  <% @nearby_buses.each do |bus| %> <!--FIX THIS with order()-->
     <tr>
       <td><p class="fa fa-bus fa-2x"></p></td>
-      <td><p class="busnumber"><%= bus["VEHICLE"] %></p>
-      <p class="busroute"><%= bus["ROUTE"] %> Route</td>
+      <td><p class="routenumber"><%= bus["ROUTE"] %>
+      <p class="vehiclenumber">Vehicle #<%= bus["VEHICLE"] %></p></td>
       <td><p>Approaching the <%= bus["TIMEPOINT"] %> stop, heading <%= bus["DIRECTION"] %></p></td> 
      </tr>
  <% end %>

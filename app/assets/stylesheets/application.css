@@ -69,16 +69,17 @@ a:hover {
   font-size: 120%;
  }
 
- .busnumber {
+ .routenumber {
   font-weight: bold;
   font-size: 150%;
-  margin-bottom: 0px;
+  margin-bottom: 0.25em;
  }
 
- .busroute {
+ .vehiclenumber {
   font-size: 85%;
   color: gray;
   margin-top: 0px;
+  line-height: 120%;
  }
 
 

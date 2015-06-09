@@ -21,6 +21,13 @@ body {
   color: white;
 }
 
+#map-canvas {
+  height: 300px;
+  width: 100%; 
+  margin: 0; 
+  padding: 0;
+  margin-bottom: 10px;
+}
 
 .container {
   max-width: 500px;

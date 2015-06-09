@@ -43,6 +43,9 @@ gem "annotate"
 
 gem "stamp"
 
+# hides your secret info like APIs
+gem "figaro"
+
 group :development do
   gem "quiet_assets" # quiet those assets down
 end

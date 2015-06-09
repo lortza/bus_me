@@ -42,13 +42,11 @@ body {
 .logobus {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
-  color: #beda72;
   color: #f1c500;
 }
 
 .logome {
   font-family: 'Rock Salt', cursive;
-  color: #658609;
   font-size: 80%;
   color: #ed9600;
 }
@@ -95,4 +93,9 @@ p#notice {
   color: #ff00ff;
   padding: 10px;
   margin-bottom: 5px;
+}
+
+/* ---- map styles ---- */
+.content {
+  color: black;
 }

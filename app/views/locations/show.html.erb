@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="locationbox">
-          <p><%= @location.address %></p>
-        </div><!--locationbox-->
-      </div><!--col-->
-    </div><!--row-->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="locationbox">
+      <p><%= @location.address %></p>
+    </div><!--locationbox-->
+  </div><!--col-->
+</div><!--row-->
 
-    <div id="map-canvas"></div>
+<div id="map-canvas"></div>
 
 
+<center><%= button_to 'New Search', root_url, class: "btn btn-success btn-md", :method => :get %></center>
 
-  <% if @bus_count == 0 %>
-   <p>There are no buses near you. You may want to consider another form of transportation.</p>
+<% if @bus_count == 0 %>
+  <p>There are no buses near you. You may want to consider another form of transportation.</p>
 
-<% else %>
-<table class="table">
- <% @nearby_buses.each do |bus| %> <!--FIX THIS with order()-->
-    <tr>
-      <td><p class="fa fa-bus fa-2x"></p></td>
-      <td><p class="routenumber"><%= bus["ROUTE"] %>
-      <p class="vehiclenumber">Vehicle #<%= bus["VEHICLE"] %></p></td>
-      <td><p>Approaching the <%= bus["TIMEPOINT"] %> stop, heading <%= bus["DIRECTION"] %></p></td> 
-     </tr>
- <% end %>
-<% end %>
-</table>
+  <% else %>
+  <table class="table">
+   <% @nearby_buses.each do |bus| %> <!--FIX THIS with order()-->
+      <tr>
+        <td><p class="fa fa-bus fa-2x"></p></td>
+        <td><p class="routenumber"><%= bus["ROUTE"] %>
+        <p class="vehiclenumber">Vehicle #<%= bus["VEHICLE"] %></p></td>
+        <td><p>Approaching the <%= bus["TIMEPOINT"] %> stop, heading <%= bus["DIRECTION"] %></p></td> 
+       </tr>
+    <% end %> <!-- @nearby_buses.each -->
+  </table>
+<% end %><!-- if @bus_count -->
 
-<center><%= link_to 'New Search', root_url, class: "btn btn-success btn-md" %></center>
+<center><%= button_to 'New Search', root_url, class: "btn btn-success btn-md", :method => :get %></center>
 
 
 <!-- START JAVASCRIPT -->
@@ -71,7 +72,9 @@
         }); // busMarker
 
         var contentString = 
-        '<div class="content"><h4><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] +'</h4><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
+        '<div class="content"><h4><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] + '<span style="font-size: 60%; color: gray; font-weight: normal;"> (Vehicle #' + element['VEHICLE']+ ')</span></h4><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
+
+        // '<div class="content"><h4><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] + '<span style="font-size: 70%; font-style: italic;">(' + element['VEHICLE']')</span></h4><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
 
            var infowindow = new google.maps.InfoWindow({
               content: contentString

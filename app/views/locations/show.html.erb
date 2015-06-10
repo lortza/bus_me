@@ -45,7 +45,7 @@
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
 
-        var personIcon = "<%= image_path 'man_icon.png' %>";
+        var personIcon = "<%= image_path 'man_icon2.png' %>";
 
         var marker = new google.maps.Marker({
             position: myLatLong,
@@ -58,15 +58,18 @@
       nearbyBuses.forEach(function (element){
         var busLatLong = new google.maps.LatLng(element['LATITUDE'], element['LONGITUDE']);
 
+        var busIcon = "<%= image_path 'bus_pin.png' %>";
+
         var busMarker = new google.maps.Marker({
             position: busLatLong,
             map: map,
             animation: google.maps.Animation.DROP,
-            title: element["ROUTE"]
+            title: element["ROUTE"],
+            icon: busIcon
         }); // busMarker
 
         var contentString = 
-        '<div class="content"><h2>' + element['ROUTE'] + ' ' + element['DIRECTION'] +'</h2><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
+        '<div class="content"><h2><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] +'</h2><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
 
            var infowindow = new google.maps.InfoWindow({
               content: contentString

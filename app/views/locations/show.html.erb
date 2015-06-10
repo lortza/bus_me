@@ -3,9 +3,8 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="locationbox">
-          <p>Finding buses near...</p> 
-          <h4><%= @location.address %></h4>
-        </div><!--box-gray-->
+          <p><%= @location.address %></p>
+        </div><!--locationbox-->
       </div><!--col-->
     </div><!--row-->
 
@@ -30,6 +29,9 @@
 </table>
 
 <center><%= link_to 'New Search', root_url, class: "btn btn-success btn-md" %></center>
+
+
+<!-- START JAVASCRIPT -->
 
  <script type="text/javascript">
     function initialize() {
@@ -69,7 +71,7 @@
         }); // busMarker
 
         var contentString = 
-        '<div class="content"><h2><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] +'</h2><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
+        '<div class="content"><h4><i class="fa fa-bus" style="font-size: 90%;"></i> ' + element['ROUTE'] + ' ' + element['DIRECTION'] +'</h4><p>Next stop: ' + element['TIMEPOINT'] + '</p> </div>'; // contentString
 
            var infowindow = new google.maps.InfoWindow({
               content: contentString

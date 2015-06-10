@@ -14,11 +14,26 @@
 </head>
 <body>
   <div class="container">
-  <h1><a class= "logolink" href="<%= root_url %>"><i class="fa fa-bus logoicon"></i><span class="logobus">marta</span><span class="logome">Me</span> <span class="tagline">Your Portal to Atlanta's Transit</span></a></h1>
+  <h1><a class= "logolink" href="<%= root_url %>"><i class="fa fa-bus logoicon"></i><span class="logomarta">marta</span><span class="logome">Me</span> <span class="tagline">Atlanta's Transit Portal</span></a></h1>
 
         <%= yield %>
+
+
+
+    <div class="footer">
+    <%= image_tag 'head.png' %>
+    I made this! Connect with me: <a href="https://www.facebook.com/anne.richardson" target="_blank"><i class="fa fa-facebook fa-2x"></i></a> 
+    
+    <a href="https://www.linkedin.com/in/localflavor" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a> 
+
+    <a href="https://github.com/lortza" target="_blank"><i class="fa fa-github fa-2x"></i></a> 
+
+    <a href="https://twitter.com/lortz" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+    </div> <!-- closes footer-->
         
   </div> <!-- closes container-->
+
+
 
 </body>
 </html>

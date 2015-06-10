@@ -15,18 +15,11 @@
  */
 
 
+/* ---- site-wide ---- */
 
 body {
   background-color: black;
   color: white;
-}
-
-#map-canvas {
-  height: 300px;
-  width: 100%; 
-  margin: 0; 
-  padding: 0;
-  margin-bottom: 10px;
 }
 
 .container {
@@ -39,7 +32,7 @@ body {
   color: #009cd6;
 }
 
-.logobus {
+.logomarta {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   color: #f1c500;
@@ -62,13 +55,41 @@ a:hover {
   text-decoration: none;
 }
 
-.locationbox {
-  background-color: gray;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 1em;
+button a {
+  color: white;
 }
+
+.footer {
+  margin-top: 8em;
+  background-color: #434543;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.footer i {
+  margin: 0px 5px;
+}
+
+img {
+  width: 60px;
+  float: left;
+  margin: -20px 8px 0px 0px;
+}
+
+/* ---- show page ---- */
+
+.locationbox {
+  background-color:rgba(72,197,42,0.7);
+  /* border-radius: 5px 5px 0px 0px; */
+  padding: 10px 5px 2px 5px;
+  text-align: center;
+  margin-bottom: -100px;
+  z-index: 10;
+  position: relative;
+  text-shadow: 2px 2px 3px black;
+}
+
  .yourlocation {
   font-weight: bold;
   font-size: 120%;
@@ -98,4 +119,14 @@ p#notice {
 /* ---- map styles ---- */
 .content {
   color: black;
+}
+
+#map-canvas {
+  height: 350px;
+  width: 100%; 
+  margin: 0; 
+  padding: 0;
+  margin-bottom: 10px;
+  z-index: 0;
+  position: relative;
 }

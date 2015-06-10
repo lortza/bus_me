@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BusMe</title>
+  <title>MARTA Me - Atlanta Bus Locator</title>
+  <!-- Google Maps API -->
   <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key= <%= ENV["google_maps_api_key"] %>">
-    </script>
+  </script>
+  <!-- Google Maps API -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Orbitron:500|Rock+Salt' rel='stylesheet' type='text/css'>
 
+  <!-- Bootstrap -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 </head>
+
 <body>
   <div class="container">
   <h1><a class= "logolink" href="<%= root_url %>"><i class="fa fa-bus logoicon"></i><span class="logomarta">marta</span><span class="logome">Me</span> <span class="tagline">Atlanta's Transit Portal</span></a></h1>
+  
 
         <%= yield %>
 

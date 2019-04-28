@@ -3,4 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running. However, this is the first app I have deployed and I don't have all of that documented just yet. In the mean time, you can see the live app at 
 
-https://martame.herokuapp.com/
+Hosted on heroku: https://martame.herokuapp.com/
+
+App is currently turned off
